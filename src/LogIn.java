@@ -72,4 +72,6 @@ public class LogIn {
     public JPanel getPanelPrincipal() {
         return panelPrincipal;
     }
+
+
 }

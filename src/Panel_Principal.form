@@ -2,7 +2,7 @@
 <form xmlns="http://www.intellij.com/uidesigner/form/" version="1" bind-to-class="Panel_Principal">
   <grid id="27dc6" binding="panelPrincipal" layout-manager="BorderLayout" hgap="0" vgap="0">
     <constraints>
-      <xy x="20" y="20" width="1200" height="700"/>
+      <xy x="20" y="20" width="1226" height="700"/>
     </constraints>
     <properties>
       <background color="-1"/>
@@ -278,6 +278,9 @@
                     <constraints border-constraint="South"/>
                     <properties>
                       <background color="-1"/>
+                      <minimumSize width="394" height="80"/>
+                      <opaque value="true"/>
+                      <preferredSize width="394" height="80"/>
                     </properties>
                     <border type="empty">
                       <size top="10" left="20" bottom="20" right="20"/>
@@ -286,18 +289,22 @@
                       <component id="btnAgregarInstructores" class="javax.swing.JButton" binding="btnAgregarInstructores">
                         <constraints/>
                         <properties>
+                          <alignmentY value="0.5"/>
+                          <horizontalTextPosition value="0"/>
                           <text value="Agregar"/>
                         </properties>
                       </component>
                       <component id="btnCancelarInstructores" class="javax.swing.JButton" binding="btnCancelarInstructores">
                         <constraints/>
                         <properties>
+                          <alignmentY value="0.5"/>
                           <text value="Cancelar"/>
                         </properties>
                       </component>
                       <component id="btnRegresarInstructores" class="javax.swing.JButton" binding="btnRegresarInstructores">
                         <constraints/>
                         <properties>
+                          <alignmentY value="0.5"/>
                           <text value="Regresar al Login"/>
                         </properties>
                       </component>
@@ -462,6 +469,8 @@
                     <constraints border-constraint="South"/>
                     <properties>
                       <background color="-1"/>
+                      <minimumSize width="374" height="80"/>
+                      <preferredSize width="374" height="80"/>
                     </properties>
                     <border type="empty">
                       <size top="10" left="20" bottom="20" right="20"/>
@@ -470,18 +479,21 @@
                       <component id="btnAgregarCursos" class="javax.swing.JButton" binding="btnAgregarCursos">
                         <constraints/>
                         <properties>
+                          <alignmentY value="0.5"/>
                           <text value="Agregar"/>
                         </properties>
                       </component>
                       <component id="btnCancelarCursos" class="javax.swing.JButton" binding="btnCancelarCursos">
                         <constraints/>
                         <properties>
+                          <alignmentY value="0.5"/>
                           <text value="Cancelar"/>
                         </properties>
                       </component>
                       <component id="btnRegresarCursos" class="javax.swing.JButton" binding="btnRegresarCursos">
                         <constraints/>
                         <properties>
+                          <alignmentY value="0.5"/>
                           <text value="Regresar al Login"/>
                         </properties>
                       </component>
@@ -674,18 +686,26 @@
                       <component id="btnAgregarAsistencias" class="javax.swing.JButton" binding="btnAgregarAsistencias">
                         <constraints/>
                         <properties>
+                          <alignmentY value="0.5"/>
+                          <maximumSize width="88" height="30"/>
+                          <minimumSize width="88" height="30"/>
+                          <preferredSize width="88" height="30"/>
                           <text value="Agregar"/>
                         </properties>
                       </component>
                       <component id="btnCancelarAsistencias" class="javax.swing.JButton" binding="btnCancelarAsistencias">
                         <constraints/>
                         <properties>
+                          <alignmentY value="0.5"/>
                           <text value="Cancelar"/>
                         </properties>
                       </component>
                       <component id="btnRegresarAsistencias" class="javax.swing.JButton" binding="btnRegresarAsistencias">
                         <constraints/>
                         <properties>
+                          <alignmentY value="0.5"/>
+                          <maximumSize width="142" height="30"/>
+                          <minimumSize width="142" height="30"/>
                           <text value="Regresar al Login"/>
                         </properties>
                       </component>
