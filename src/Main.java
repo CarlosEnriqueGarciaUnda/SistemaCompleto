@@ -1,40 +1,36 @@
 import javax.swing.*;
-import java.awt.*;
 
 public class Main {
     public static void main(String[] args) {
         SwingUtilities.invokeLater(() -> {
             try {
-                // Configurar LookAndFeel
+                // Usa el look and feel del sistema operativo
                 UIManager.setLookAndFeel(UIManager.getSystemLookAndFeelClassName());
             } catch (Exception e) {
                 e.printStackTrace();
             }
 
-            // 1. Crear el JFrame
             JFrame frame = new JFrame("Login - Sistema TecNM");
             frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
-            // 2. Crear la instancia del formulario de Login
             LogIn login = new LogIn();
 
-            // 3. Crear el BackgroundPanel. Usamos GridBagLayout para centrar el formulario.
-            BackgroundPanel backgroundContainer = new BackgroundPanel(new GridBagLayout());
+            // Usa BackgroundPanel para dibujar el fondo de imagen
+            BackgroundPanel backgroundContainer = new BackgroundPanel(new java.awt.GridBagLayout());
 
-            // 4. Agregar el formulario de Login (panelPrincipal) al centro del BackgroundPanel
+            java.awt.GridBagConstraints gbc = new java.awt.GridBagConstraints();
+            gbc.anchor = java.awt.GridBagConstraints.CENTER;
+
             JPanel loginPanel = login.getPanelPrincipal();
             if (loginPanel != null) {
-                // GridBagConstraints por defecto centra el componente
-                backgroundContainer.add(loginPanel, new GridBagConstraints());
+                backgroundContainer.add(loginPanel, gbc);
             }
 
-            // 5. Asignar el BackgroundPanel como el contenido principal del JFrame
             frame.setContentPane(backgroundContainer);
 
-            // 6. Configuración de la ventana
             frame.setSize(1226, 700);
             frame.setResizable(true);
-            frame.setLocationRelativeTo(null); // Centra la ventana
+            frame.setLocationRelativeTo(null);
             frame.setVisible(true);
         });
     }
