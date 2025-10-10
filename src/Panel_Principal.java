@@ -16,14 +16,14 @@ public class Panel_Principal {
     private JButton cursosButton;
     private JButton asistenciasButton;
     private JPanel panelCentral;
-    private JPanel botonesCursosPanel; // ¡Añade esta línea!
+    private JPanel botonesCursosPanel;
 
     private JPanel panelInstructores;
     private JTable tablaInstructores;
     private JScrollPane scrollInstructores;
     private JPanel formularioInstructores;
     private JPanel formInstructores;
-    private JPanel botonesInstructoresPanel; // Contenedor de botones
+    private JPanel botonesInstructoresPanel;
     private JButton btnAgregarInstructor;
     private JButton btnCancelarInstructor;
     private JButton btnVolverInstructor;
@@ -41,9 +41,7 @@ public class Panel_Principal {
     private JTextField txtTitulacionAnioInstructores;
     private JTextField txtCedulaInstructores;
 
-    // ===============================================
-    // 3. COMPONENTES DEL PANEL CURSOS (BINDINGS)
-    // ===============================================
+   // COMPONENTES DEL PANEL CURSOS (BINDINGS)
     private JPanel panelCursos;
     private JTable tablaCursos;
     private JScrollPane scrollCursos;
@@ -71,9 +69,8 @@ public class Panel_Principal {
     private JCheckBox cbDom;
     private JTextArea txtActividadPorcentaje;
 
-    // ===============================================
-    // 4. COMPONENTES DEL PANEL ASISTENCIAS (BINDINGS)
-    // ===============================================
+    // COMPONENTES DEL PANEL ASISTENCIAS (BINDINGS)
+
     private JPanel panelAsistencias;
     private JTable tablaAsistencias;
     private JScrollPane scrollAsistencias;
@@ -93,7 +90,7 @@ public class Panel_Principal {
     private JComboBox<String> cmbContratoAsistencias;
     private JTextField txtHorarioAsistencias;
 
-    // === NUEVO PANEL DE BIENVENIDA ===
+
     private JPanel panelBienvenida;
 
     public Panel_Principal() {
@@ -129,7 +126,6 @@ public class Panel_Principal {
     private void crearPanelesCentrales() {
         panelBienvenida = crearPanelBienvenida();
 
-        // Agregar todas las 'cartas' al CardLayout y mostrar la Bienvenida
         panelCentral.removeAll();
         panelCentral.add(panelBienvenida, "Bienvenida");
         panelCentral.add(panelInstructores, "Instructores");
@@ -143,7 +139,6 @@ public class Panel_Principal {
         panelCentral.repaint();
     }
 
-    // Mantiene la creación de la bienvenida manual
     private JPanel crearPanelBienvenida() {
         JPanel panel = new JPanel(new GridBagLayout()) {
             private Image backgroundImage;
@@ -164,17 +159,13 @@ public class Panel_Principal {
         };
         panel.setBackground(Color.WHITE);
 
-        JLabel bienvenidaLabel = new JLabel("¡Bienveni@!");
+        JLabel bienvenidaLabel = new JLabel("¡Bienveni@ al sistema de TecNM!");
         bienvenidaLabel.setFont(new Font("Arial", Font.BOLD, 38));
         bienvenidaLabel.setForeground(Color.black.darker());
 
         panel.add(bienvenidaLabel);
         return panel;
     }
-
-    // ===============================================
-    // LÓGICA DE EVENTOS Y FUNCIONALIDAD
-    // ===============================================
 
     private void agregarListeners() {
         CardLayout cl = (CardLayout) (panelCentral.getLayout());
@@ -200,7 +191,6 @@ public class Panel_Principal {
         btnVolverAsistencia.addActionListener(e -> cerrarVentana());
     }
 
-    // --- Lógica de Instructores ---
     private void agregarInstructor(ActionEvent e) {
         DefaultTableModel model = (DefaultTableModel) tablaInstructores.getModel();
 
@@ -238,7 +228,6 @@ public class Panel_Principal {
         cmbFormacionInstructores.setSelectedIndex(0);
     }
 
-    // --- Lógica de Cursos ---
     private void agregarCurso(ActionEvent e) {
         DefaultTableModel model = (DefaultTableModel) tablaCursos.getModel();
 
@@ -247,7 +236,6 @@ public class Panel_Principal {
             return;
         }
 
-        // Obtener días seleccionados
         String diasSeleccionados = obtenerDiasSeleccionados();
 
         model.addRow(new Object[]{
@@ -280,12 +268,10 @@ public class Panel_Principal {
         );
         limpiarCampos(campos);
         cmbTipoCurso.setSelectedIndex(0);
-        // Limpiar CheckBoxes
         List<JCheckBox> diasCheckBoxes = Arrays.asList(cbLun, cbMar, cbMie, cbJue, cbVie, cbSab, cbDom);
         for(JCheckBox cb : diasCheckBoxes) cb.setSelected(false);
     }
 
-    // --- Lógica de Asistencias ---
     private void agregarAsistencia(ActionEvent e) {
         DefaultTableModel model = (DefaultTableModel) tablaAsistencias.getModel();
 
@@ -316,7 +302,6 @@ public class Panel_Principal {
         cmbContratoAsistencias.setSelectedIndex(0);
     }
 
-    // --- Métodos Auxiliares ---
 
     private void limpiarCampos(List<? extends JTextComponent> campos) {
         for(JTextComponent campo : campos) {
@@ -329,9 +314,8 @@ public class Panel_Principal {
         button.setPreferredSize(new Dimension(170, 35));
         button.setMinimumSize(new Dimension(170, 35));
 
-        // --> AÑADIR ESTAS LÍNEAS CLAVE <--
         button.setOpaque(true);
-        button.setBorderPainted(false); // Para asegurar que no hay un borde adicional feo
+        button.setBorderPainted(false);
         // ---------------------------------
 
         button.setFont(new Font("Arial", Font.BOLD, 12));
@@ -346,7 +330,6 @@ public class Panel_Principal {
             frame.dispose();
             SwingUtilities.invokeLater(() -> {
                 JFrame loginFrame = new JFrame("Login - Sistema TecNM");
-                // Asegúrate de que LogIn exista y tenga un método getPanelPrincipal()
                 LogIn login = new LogIn();
                 BackgroundPanel backgroundContainer = new BackgroundPanel(new GridBagLayout());
                 GridBagConstraints gbc = new GridBagConstraints();
@@ -362,6 +345,5 @@ public class Panel_Principal {
 
     // Método que se llama internamente por IntelliJ para inicializar los componentes del .form
     private void $$$setupUI$$$() {
-        // Lógica autogenerada por el diseñador de IntelliJ.
     }
 }

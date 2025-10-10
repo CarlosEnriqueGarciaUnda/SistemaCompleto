@@ -11,7 +11,6 @@ public class LogIn {
     private JPanel panelFormulario;
 
     public LogIn() {
-        // Hacemos que los paneles sean transparentes para que se vea el fondo
         if (panelPrincipal != null) {
             panelPrincipal.setOpaque(false);
         }
@@ -25,7 +24,6 @@ public class LogIn {
             String usuario = emailTextField.getText();
             String password = new String(passwordField.getPassword());
 
-            // Validación simple (simulada)
             if (usuario.isEmpty() || password.isEmpty() || usuario.equals("Email address") || password.equals("Password")) {
                 JOptionPane.showMessageDialog(panelPrincipal,
                         "Por favor ingrese usuario y contraseña",
@@ -34,17 +32,14 @@ public class LogIn {
                 return;
             }
 
-            // Cierra la ventana de Login
             JFrame loginFrame = (JFrame) SwingUtilities.getWindowAncestor(panelPrincipal);
             loginFrame.dispose();
 
-            // Abre el Panel Principal
             abrirPanelPrincipal();
         });
     }
 
     private void crearInterfaz() {
-        // Lógica de Placeholder para email
         emailTextField.addFocusListener(new java.awt.event.FocusAdapter() {
             public void focusGained(java.awt.event.FocusEvent evt) {
                 if (emailTextField.getText().equals("Email address")) {
@@ -58,7 +53,6 @@ public class LogIn {
             }
         });
 
-        // Lógica de Placeholder para password
         passwordField.addFocusListener(new java.awt.event.FocusAdapter() {
             public void focusGained(java.awt.event.FocusEvent evt) {
                 if (new String(passwordField.getPassword()).equals("Password")) {
@@ -85,7 +79,6 @@ public class LogIn {
 
     public JPanel getPanelPrincipal() {
         if (panelPrincipal != null) {
-            // Aplicar borde al formulario de login (Si usas un panel con Layout manager en el .form)
             Border line = new LineBorder(Color.white, 10, true);
             panelPrincipal.setBorder(line);
         }

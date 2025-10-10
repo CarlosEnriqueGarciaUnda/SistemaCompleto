@@ -4,7 +4,6 @@ public class Main {
     public static void main(String[] args) {
         SwingUtilities.invokeLater(() -> {
             try {
-                // Usa el look and feel del sistema operativo
                 UIManager.setLookAndFeel(UIManager.getSystemLookAndFeelClassName());
             } catch (Exception e) {
                 e.printStackTrace();
@@ -15,7 +14,6 @@ public class Main {
 
             LogIn login = new LogIn();
 
-            // Usa BackgroundPanel para dibujar el fondo de imagen
             BackgroundPanel backgroundContainer = new BackgroundPanel(new java.awt.GridBagLayout());
 
             java.awt.GridBagConstraints gbc = new java.awt.GridBagConstraints();
